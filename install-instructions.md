@@ -15,12 +15,12 @@
     pip install -r requirements.txt
     ```
 
-4Build from setup.py
+4. Build from setup.py
     ```bash
     python setup.py bdist_wheel sdist
     ```
 
-5Install Task_CLI package
+5. Install Task_CLI package
     ```bash
     pip install -e .
     ```
