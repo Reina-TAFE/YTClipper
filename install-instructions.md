@@ -29,6 +29,14 @@
 
 Run in bash terminal using:
 ```bash
-YT_Clipper --url <video-url> --start <starting-timestamp> 
+YT_Clipper download --url <video-url>
+```
+
+```bash
+YT_Clipper clip --url <video-url> --start <starting-timestamp> 
           --end <end-timestamp> --title <output-video-title> --output <output-path>
+```
+
+```bash
+YT_Clipper delete_file --path <video-path>
 ```
