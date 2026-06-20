@@ -1,0 +1,8 @@
+#!./.venv/Scripts/python.exe
+try:
+    from cli import cli         # for running after build and install
+except ModuleNotFoundError:
+    from src.cli import cli     # for running after build and install
+
+if __name__ == "__main__":
+    cli()  # call cli command ground run file is run
