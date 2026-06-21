@@ -4,6 +4,7 @@ import os
 import click
 try:
     from video_manager import VideoManager
+    from file_handler import delete
 except:
     from  src.video_manager import VideoManager
 
@@ -41,13 +42,13 @@ def clip(url, start, end, title, output):
 @click.option('--path', "-p", default=None)
 def delete_file(path):
     try:
-        os.remove(path)
+        delete(path)
     except Exception as e:
         print(e)
 
 @cli.command()
 def version():
-    print("Version 1.0")
+    print("Version 0.2")
 
 if __name__ == '__main__':
     cli()

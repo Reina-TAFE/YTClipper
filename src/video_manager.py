@@ -4,7 +4,7 @@ from static_ffmpeg import run
 import subprocess
 import os
 import time
-from file_handler import move_video, delete_file
+from file_handler import move_video, delete
 
 
 class VideoManager:
@@ -64,7 +64,7 @@ class VideoManager:
                 print(f"Successfully clipped video: {title}.mp4")
                 if move_video(output_video, output_path):
                     print("Clipped successfully downloaded!")
-                    delete_file(filename)
+                    delete(filename)
                 else:
                     print("Failed to clip video!")
             except subprocess.CalledProcessError as e:

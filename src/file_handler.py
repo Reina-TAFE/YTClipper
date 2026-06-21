@@ -15,7 +15,7 @@ def move_video(filename, destination):
     else:
         print(f"file does not exist: {filename}")
 
-def delete_file(path):
+def delete(path):
     try:
         if os.path.exists(path):
             os.remove(path)
@@ -23,4 +23,4 @@ def delete_file(path):
                 print(f"Successfully deleted {path}!")
                 return True
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"Could Not Delete: {e}")
