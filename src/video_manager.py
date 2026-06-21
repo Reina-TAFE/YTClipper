@@ -10,12 +10,12 @@ from file_handler import move_video, delete_file
 class VideoManager:
 
     @staticmethod
-    def download_video(url):
+    def download_video(url, title=None):
         ydl_opts = {
             'format_sort': ['res:1080', 'ext:mp4:m4a'],
             'merge_output_format': 'mp4',
             # Name format: Uploader - Title (ID).extension
-            'outtmpl': '%(id)s.mp4',
+            'outtmpl': f'{title if title is not None else "%(id)s"}.mp4',
         }
 
         try:

@@ -1,7 +1,7 @@
-#!./.venv/Scripts/python.exe
+#!/usr/bin/env python3
 try:
     from cli import cli         # for running after build and install
-except ModuleNotFoundError:
+except:
     from src.cli import cli     # for running after build and install
 
 if __name__ == "__main__":

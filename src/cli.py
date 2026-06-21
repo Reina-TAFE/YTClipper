@@ -1,4 +1,4 @@
-#!../.venv/Scripts/python.exe
+
 import os
 
 import click
@@ -13,21 +13,24 @@ def cli():
     pass
 
 @cli.command()
-@click.option('--url', "-u", default=None)
-# @click.option('--title', "-t", default=None)
+@click.option('--url', '-u', default="https://youtu.be/X8avbciUP3c")
+@click.option('--title', '-t', default="myVideo")
 # @click.option('--output', "-o", default=None)
-def download(url):
+def download(url, title):
     try:
-        VideoManager.download_video(url)
+        if title is None:
+            VideoManager.download_video(url)
+        else:
+            VideoManager.download_video(url, title)
     except Exception as e:
         print(e)
 
 @cli.command()
-@click.option('--url')
-@click.option('--start')
-@click.option('--end')
-@click.option('--title')
-@click.option('--output')
+@click.option('--url', '-u', default="https://youtu.be/X8avbciUP3c")
+@click.option('--start', '-s', default="00:00:00")
+@click.option('--end', '-e', default="00:00:05")
+@click.option('--title', '-t', default="myclip")
+@click.option('--output', '-o', default="./clips/")
 def clip(url, start, end, title, output):
     try:
         VideoManager.clip_video(url, start, end, title, output)

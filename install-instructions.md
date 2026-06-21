@@ -22,7 +22,7 @@
 
 5. Install Task_CLI package
     ```bash
-    pip install -e .
+    python -m pip install .
     ```
 
 ## Usage
